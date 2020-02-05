@@ -139,7 +139,7 @@ The main difference between `.push()` and `.navigate()` is the fact that .push()
 
 With this configuration, when the button is clicked the same page is reloaded but in case of .navigate(), nothing happens.
 
-_`props.navigation.goBack()`
-_`props.navigation.pop()`
-_`props.navigation.popToTop()`
-_`props.navigation.replace('CategoryMeals')`
+- `props.navigation.goBack()`
+- `props.navigation.pop()`
+- `props.navigation.popToTop()`
+- `props.navigation.replace('CategoryMeals')`
