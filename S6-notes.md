@@ -45,7 +45,7 @@ Finally, we create a navigation folder in the root folder. Inside of it, create 
 
 > So when we use the StackNavigator (= next lecture), run
 
-> `npm install --save react-navigation-stack``
+> `npm install --save react-navigation-stack`
 
 > before you start using it (with v3 and lower, it was part of react-navigation itself).
 > Also add this import in the file where you are using `createStackNavigator`:
