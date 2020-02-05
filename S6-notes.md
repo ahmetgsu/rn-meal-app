@@ -109,3 +109,37 @@ For example, we put a button in **`CategoriesScreen.js`** file which allows us t
   }}
 />
 ```
+
+The below code is shorter alternative syntax for navigation. Both are valid.
+
+```javascript
+<Button
+  title='Go to Meals!'
+  onPress={() => {
+    props.navigation.navigate({'CategoryMeals'});
+  }}
+/>
+```
+
+### 5. Pushing, Popping & Replacing in React-Navigation
+
+`props.navigation.navigate({'CategoryMeals'})` takes object
+`props.navigate.push("CategoryMeals")` just takes route name as string
+
+The main difference between `.push()` and `.navigate()` is the fact that .push() allows us to navigate between even in the same screen. For example, suppose that we change the button configuration in **`CategoriesScreen.js`** file as follows:
+
+```javascript
+<Button
+  title='Go to Meals!'
+  onPress={() => {
+    props.navigation.push('Categories');
+  }}
+/>
+```
+
+With this configuration, when the button is clicked the same page is reloaded but in case of .navigate(), nothing happens.
+
+`props.navigation.goBack()`
+`props.navigation.pop()`
+`props.navigation.popToTop()`
+`props.navigation.replace('CategoryMeals')`
