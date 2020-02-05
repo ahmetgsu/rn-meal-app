@@ -29,3 +29,25 @@ if (!fontLoaded) {
   );
 }
 ```
+
+2. Installing React Navigation & Adding Navigation to the App
+
+We first install react-navigation 3rd party library: `npm install --save react-navigation`. Then, we need to install the following dependencies:
+
+```javascript
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+Finally, we create a navigation folder in the root folder. Inside of it, create a MealsNavigator.js file to configure the navigation.
+
+> If you're using React Navigation v4 or higher, everything works as shown in this module but there is one important difference:
+> You need to install the different navigators which we'll use in this module(StackNavigator, DrawerNavigator, TabsNavigator) separately.
+
+> So when we use the StackNavigator (= next lecture), run
+
+> `npm install --save react-navigation-stack``
+
+> before you start using it (with v3 and lower, it was part of react-navigation itself).
+> Also add this import in the file where you are using `createStackNavigator`:
+
+> `import { createStackNavigator } from 'react-navigation-stack';`
