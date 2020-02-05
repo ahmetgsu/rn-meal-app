@@ -68,7 +68,7 @@ Finally, we create a navigation folder in the root folder. Inside of it, create 
 
 Provides a way for your app to transition between screens where each new screen is placed on top of a stack.
 
-In MealsNavigator.js file we use the following configurations:
+In `MealsNavigator.js` file we use the following configurations:
 
 ```javascript
 import { createAppContainer } from 'react-navigation';
@@ -90,3 +90,22 @@ export default createAppContainer(MealsNavigator);
 ```
 
 important note, **`createStackNavigator`** is moved to **`react-navigation-stack`**.
+
+Then, we need to import MealsNavigator in `App.js` file and simply return it <MealsNavigator />
+
+### 4. Navigating Between Screens
+
+MealsNavigator automatically passes some props related to react-navigation. So we can employ them to navigate between screens.
+
+For example, we put a button in **`CategoriesScreen.js`** file which allows us to navigate to CategoryMealsScreen
+
+```javascript
+<Button
+  title='Go to Meals!'
+  onPress={() => {
+    props.navigation.navigate({
+      routeName: 'CategoryMeals'
+    });
+  }}
+/>
+```
