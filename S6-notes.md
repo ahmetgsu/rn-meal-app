@@ -43,7 +43,7 @@ Finally, we create a navigation folder in the root folder. Inside of it, create 
 > If you're using React Navigation v4 or higher, everything works as shown in this module but there is one important difference:
 > You need to install the different navigators which we'll use in this module(StackNavigator, DrawerNavigator, TabsNavigator) separately.
 >
-> So when we use the StackNavigator (= next lecture), run
+> So when we use the [StackNavigator](https://reactnavigation.org/docs/en/stack-navigator.html) (= next lecture), run
 >
 > **`npm install --save react-navigation-stack`**
 >
@@ -51,3 +51,42 @@ Finally, we create a navigation folder in the root folder. Inside of it, create 
 > Also add this import in the file where you are using **`createStackNavigator`**:
 >
 > **`import { createStackNavigator } from 'react-navigation-stack';`**
+>
+> Same for TabsNavigator (used a little bit later in this module):
+>
+> **`npm install --save react-navigation-tabs`**
+>
+> **`import { createBottomTabNavigator } from 'react-navigation-tabs';`**
+>
+> And also for DrawerNavigator (also used later in this module):
+>
+> **`npm install --save react-navigation-drawer`**
+>
+> **`import { createDrawerNavigator } from 'react-navigation-drawer';`**
+
+### 3. Creating a StackNavigator
+
+Provides a way for your app to transition between screens where each new screen is placed on top of a stack.
+
+In MealsNavigator.js file we use the following configurations:
+
+```javascript
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
+import CategoriesScreen from '../screens/CategoriesScreen';
+import CategoryMealsScreen from '../screens/CategoryMealsScreen';
+import MealDetailScreen from '../screens/MealDetailScreen';
+
+const MealsNavigator = createStackNavigator({
+  Categories: CategoriesScreen,
+  CategoryMeals: {
+    screen: CategoryMealsScreen
+  },
+  MealDetail: MealDetailScreen
+});
+
+export default createAppContainer(MealsNavigator);
+```
+
+important note, **`createStackNavigator`** is moved to **`react-navigation-stack`**.
