@@ -21,7 +21,7 @@ const MealsNavigator = createStackNavigator(
     },
     MealDetail: MealDetailScreen
   },
-  // createStackNavigator 2nd object
+  // createStackNavigator 2nd parameter
   {
     defaultNavigationOptions: {
       headerStyle: {
