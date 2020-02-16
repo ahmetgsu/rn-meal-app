@@ -7,8 +7,10 @@ import {
   TouchableOpacity,
   Platform
 } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import { CATEGORIES } from '../data/dummy-data';
+import HeaderButton from '../components/HeaderButton';
 import CategoryGridTile from '../components/CategoryGridTile';
 
 const CategoriesScreen = props => {
@@ -41,8 +43,22 @@ const CategoriesScreen = props => {
 };
 
 // Can be moved to the MealsNavigator.js file
-CategoriesScreen.navigationOptions = {
-  headerTitle: 'Meal Categories'
+CategoriesScreen.navigationOptions = navData => {
+  const { navigation } = navData;
+  return {
+    headerTitle: 'Meal Categories',
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title='Menu'
+          iconName='md-menu'
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    )
+  };
 };
 
 const styles = StyleSheet.create({
