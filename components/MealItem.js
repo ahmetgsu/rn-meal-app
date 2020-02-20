@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground
 } from 'react-native';
+import DefaultText from './DefaultText';
 
 const MealItem = props => {
   return (
@@ -18,14 +19,16 @@ const MealItem = props => {
               style={styles.bgImage}
             >
               <View style={styles.titleContainer}>
-              <Text style={styles.title} numberOfLines={1}>{props.title}</Text>
+                <Text style={styles.title} numberOfLines={1}>
+                  {props.title}
+                </Text>
               </View>
             </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-            <Text>{props.duration}minutes</Text>
-            <Text>{props.complexity.toUpperCase()}</Text>
-            <Text>{props.affordability.toUpperCase()}</Text>
+            <DefaultText>{props.duration}minutes</DefaultText>
+            <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
+            <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
           </View>
         </View>
       </TouchableOpacity>
@@ -39,13 +42,13 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#e6e4e2',
     borderRadius: 10,
-    overflow: "hidden",
+    overflow: 'hidden',
     marginVertical: 5
   },
   bgImage: {
     width: '100%',
     height: '100%',
-    justifyContent: "flex-end"
+    justifyContent: 'flex-end'
   },
   mealRow: {
     flexDirection: 'row'
@@ -56,20 +59,19 @@ const styles = StyleSheet.create({
   mealDetail: {
     paddingHorizontal: 10,
     justifyContent: 'space-between',
-    alignItems: "center",
-    height: "15%"
-
+    alignItems: 'center',
+    height: '15%'
   },
   titleContainer: {
-    backgroundColor: "rgba(0,0,0,0.5)",
+    backgroundColor: 'rgba(0,0,0,0.5)',
     paddingVertical: 5,
-    paddingHorizontal: 12,
+    paddingHorizontal: 12
   },
   title: {
-    fontFamily: "roboto-slab-bold",
+    fontFamily: 'roboto-slab-bold',
     fontSize: 22,
-    color: "white",
-    textAlign: "center"
+    color: 'white',
+    textAlign: 'center'
   }
 });
 
